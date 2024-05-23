@@ -1,0 +1,8 @@
+.trending-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.trending-container h1 {
+    color: #ffff;
+}

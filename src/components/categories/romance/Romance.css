@@ -1,0 +1,9 @@
+.romance-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+.romance-container h1 {
+    color: #ffff;
+}
