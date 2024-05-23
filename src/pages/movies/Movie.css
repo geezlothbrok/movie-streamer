@@ -1,21 +1,19 @@
 .movie-container {
     height: 100vh;
-    display: grid;
-    place-items: center;
-    background: black;
+   width: 100vw;
+   background: black;
+  display: grid;
+ place-items: center;
 }
-
 
 img {
     width: 250px;
-    height: 350px;
-    object-fit: cover;
-   
+    height: 350px;   
     transition: transform 0.5s ease-in-out;
 }
 
 img:hover {
-    transform: scale(1.15);
+    transform: scale(1.04);
     cursor: pointer;
     z-index: 2;
     border-radius: 5px;
@@ -29,6 +27,4 @@ img:hover {
     grid-template-columns: repeat(4, 1fr);
     row-gap: 10px;
     background-color: black;
-    padding: 20px;
-    object-fit: contain;
 }

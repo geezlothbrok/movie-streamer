@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import Navigation from "../../components/navigation/Navigation";
 import "./Movie.css";
 import axios from "axios";
+import TrendingMovies from "../../components/categories/trending/TrendingMovies";
 
 function Movies() {
   const [movies, setMovies] = useState([]);
@@ -19,11 +20,12 @@ function Movies() {
 
   const handleClick = () => {};
 
-  console.log(movies);
   return (
     <div className="movie-container">
       
      <Navigation />
+
+     <TrendingMovies />
 
         <div className="all-movies">
            {movies.map((movie) => (  
