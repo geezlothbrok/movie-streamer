@@ -5,11 +5,13 @@ import axios from 'axios';
 function TrendingMovies() {
   const [movieBanner, setMovieBanner] = useState([]);
 
+  // FETCHING BANNER IMAGE FROM THE API AND DISPLAY THEM RANDOMLY
   const fetchBannerData = async () => {
     const response = await axios.get("https://api.themoviedb.org/3/discover/movie?api_key=92ad5a49698ad28b7f09527b62b6ecf9");
     setMovieBanner(response.data.results[Math.floor(Math.random() * response.data.results.length - 1)]);
   };
 
+  // TO SHORTEN THE DESCRIPTION TO 150 CHARACTERS AND APPEND "..." AT THE END
   const truncate = (str, n) => {
     return str?.length > n ? str.substr(0, n-1) + "..." : str;
   };

@@ -23,6 +23,7 @@ function Navbar() {
   setShowMenu(false)
  };
 
+//  TO MAKE NAVBAR TRANSPARENT WHEN SCROLL
  const navBarVisibility = () => {
   if (window.scrollY > 100) {
     setShowNav(true);

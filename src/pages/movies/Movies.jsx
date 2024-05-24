@@ -10,6 +10,7 @@ function Movies() {
   const [movies, setMovies] = useState([]);
   const [trailerUrl, setTrailerUrl] = useState("");
 
+  // TO GET ALL MOVIES FROM THE API
   const getMovies = async () => {
     const response = await axios.get(
       "https://api.themoviedb.org/3/discover/movie?api_key=92ad5a49698ad28b7f09527b62b6ecf9"
@@ -21,6 +22,7 @@ function Movies() {
     getMovies();
   }, []);
 
+  // FUNCTION TO SEARCH FOR MOVIE URL USING THE TITLE ON YOUTUBE AND PLAY IT AS A TRAILER
   const handleClick = (movie) => {
     if (trailerUrl) {
       setTrailerUrl("");
