@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { CiSearch } from "react-icons/ci";
 import { IoIosClose } from "react-icons/io";
@@ -11,6 +11,7 @@ import "./NavBar.css";
 function Navbar() {
     const [search, setSearch] = useState("");
     const [showMenu, setShowMenu] = useState(false);
+    const [showNav, setShowNav] = useState(false);
 
   const activeTab = ({ isActive }) => (isActive ? "active-tab" : "");
 
@@ -22,9 +23,24 @@ function Navbar() {
   setShowMenu(false)
  };
 
+ const navBarVisibility = () => {
+  if (window.scrollY > 100) {
+    setShowNav(true);
+  } else {
+    setShowNav(true);
+  };
+ };
+
+ useEffect(() => {
+  navBarVisibility();
+  return () => {
+    window.removeEventListener("scroll", navBarVisibility)
+  }
+ },[])
+
   return (
     <>
-      <header className="nav-container">
+      <header className={`${showNav && "nav-container"}`}>
         <nav className="container-width">
           <section className="logo">
           <p className="logo-image">Binge</p>

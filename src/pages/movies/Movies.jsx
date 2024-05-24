@@ -3,9 +3,12 @@ import Navigation from "../../components/navigation/Navigation";
 import "./Movie.css";
 import axios from "axios";
 import TrendingMovies from "../../components/categories/trending/TrendingMovies";
+import movieTrailer from "movie-trailer";
+import YouTube from "react-youtube";
 
 function Movies() {
   const [movies, setMovies] = useState([]);
+  const [trailerUrl, setTrailerUrl] = useState("");
 
   const getMovies = async () => {
     const response = await axios.get(
@@ -18,7 +21,26 @@ function Movies() {
     getMovies();
   }, []);
 
-  const handleClick = () => {};
+  const handleClick = (movie) => {
+    if (trailerUrl) {
+      setTrailerUrl("");
+    } else {
+      movieTrailer(movie?.original_title || movie?.title || "")
+      .then((url) => {
+        const urlParams = new URLSearchParams(new URL(url).search);
+        setTrailerUrl(urlParams.get("v"))
+      })
+      .catch((error) => console.log(error));
+    };
+  };
+
+  const opts = {
+    height: "390",
+    width: "100%",
+    playerVars: {
+      autoplay: 1
+    },
+  };
 
   return (
     <div className="movie-container">
@@ -36,6 +58,7 @@ function Movies() {
             />
            ))}
         </div>
+        {trailerUrl && <YouTube videoId={trailerUrl} opts={opts}/>}
     </div>
   );
 }

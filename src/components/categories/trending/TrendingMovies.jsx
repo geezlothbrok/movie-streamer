@@ -30,10 +30,12 @@ function TrendingMovies() {
           {movieBanner?.title || movieBanner?.original_title}
         </h1>
         <p className="release-date">
-          {movieBanner?.release_date}
+          Date of Release: {movieBanner?.release_date}
         </p>
+        <div className="buttons">
         <div className="banner-button">Play</div>
         <div className="banner-button">My List</div>
+        </div>
         <div className="banner-description">
           {truncate(movieBanner?.overview, 150)}
         </div>
