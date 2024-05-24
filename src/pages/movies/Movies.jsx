@@ -48,7 +48,9 @@ function Movies() {
      <Navigation />
 
      <TrendingMovies />
-{trailerUrl && <YouTube videoId={trailerUrl} opts={opts}/>}
+     <div className="trailer-container">
+     {trailerUrl && <YouTube videoId={trailerUrl} opts={opts} className="trailer-video"/>}
+     </div>
         <div className="all-movies">
            {movies.map((movie) => (  
             <img key={movie.id}

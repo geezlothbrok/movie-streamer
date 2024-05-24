@@ -9,7 +9,6 @@ function TrendingMovies() {
     const response = await axios.get("https://api.themoviedb.org/3/discover/movie?api_key=92ad5a49698ad28b7f09527b62b6ecf9");
     setMovieBanner(response.data.results[Math.floor(Math.random() * response.data.results.length - 1)]);
   };
-  console.log(movieBanner);
 
   const truncate = (str, n) => {
     return str?.length > n ? str.substr(0, n-1) + "..." : str;
