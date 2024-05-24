@@ -35,8 +35,8 @@ function Movies() {
   };
 
   const opts = {
-    height: "390",
-    width: "100%",
+    // height: "100%",
+    // width: "100%",
     playerVars: {
       autoplay: 1
     },
@@ -48,17 +48,18 @@ function Movies() {
      <Navigation />
 
      <TrendingMovies />
-
+{trailerUrl && <YouTube videoId={trailerUrl} opts={opts}/>}
         <div className="all-movies">
            {movies.map((movie) => (  
             <img key={movie.id}
-            onClick={handleClick(movie)}
+            onClick={() => handleClick(movie)}
               src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
               alt={movie.title}
             />
-           ))}
+           ))} 
+           
         </div>
-        {trailerUrl && <YouTube videoId={trailerUrl} opts={opts}/>}
+       
     </div>
   );
 }
