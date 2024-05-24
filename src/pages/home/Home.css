@@ -13,7 +13,7 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.85);
+    background-color: rgba(0, 0, 0, 0.7);
 }
 
 .home-content {
@@ -55,6 +55,7 @@
 .free-text {
     color: red;
 }
+
 
 /* FOR TABLET AND MEDIUM SCREEN VIEWS */
 

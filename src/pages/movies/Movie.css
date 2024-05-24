@@ -34,6 +34,14 @@ img:hover {
     display: flex;
     justify-content: center;
     align-items: center;
+    background-color: black;
+}
+
+.trailer-video {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 
